@@ -30,42 +30,42 @@ public class TestTrade {
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorIndicatorNull() {
 		Stock s = Stock.createCommonStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(100));
-		Trade t = Trade.registerTrade(s, null, BigDecimal.valueOf(500), BigInteger.valueOf(100), Instant.now());
+		Trade.registerTrade(s, null, BigDecimal.valueOf(500), BigInteger.valueOf(100), Instant.now());
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorPriceNull() {
 		Stock s = Stock.createCommonStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(100));
-		Trade t = Trade.registerTrade(s, Indicator.SELL, null, BigInteger.valueOf(100), Instant.now());
+		Trade.registerTrade(s, Indicator.SELL, null, BigInteger.valueOf(100), Instant.now());
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorPriceNegative() {
 		Stock s = Stock.createCommonStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(100));
-		Trade t = Trade.registerTrade(s, Indicator.SELL, BigDecimal.valueOf(-2), BigInteger.valueOf(100), Instant.now());
+		Trade.registerTrade(s, Indicator.SELL, BigDecimal.valueOf(-2), BigInteger.valueOf(100), Instant.now());
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorQtyNull() {
 		Stock s = Stock.createCommonStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(100));
-		Trade t = Trade.registerTrade(s, Indicator.SELL, BigDecimal.valueOf(500), null, Instant.now());
+		Trade.registerTrade(s, Indicator.SELL, BigDecimal.valueOf(500), null, Instant.now());
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorQtyZero() {
 		Stock s = Stock.createCommonStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(100));
-		Trade t = Trade.registerTrade(s, Indicator.SELL, BigDecimal.valueOf(500), BigInteger.valueOf(0), Instant.now());
+		Trade.registerTrade(s, Indicator.SELL, BigDecimal.valueOf(500), BigInteger.valueOf(0), Instant.now());
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorInstantNull() {
 		Stock s = Stock.createCommonStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(100));
-		Trade t = Trade.registerTrade(s, Indicator.SELL, BigDecimal.valueOf(500), BigInteger.valueOf(100), null);
+		Trade.registerTrade(s, Indicator.SELL, BigDecimal.valueOf(500), BigInteger.valueOf(100), null);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorStockNull() {
-		Trade t = Trade.registerTrade(null, Indicator.SELL, BigDecimal.valueOf(500), BigInteger.valueOf(100), Instant.now());
+		Trade.registerTrade(null, Indicator.SELL, BigDecimal.valueOf(500), BigInteger.valueOf(100), Instant.now());
 	}
 	
 }

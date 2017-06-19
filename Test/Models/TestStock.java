@@ -48,42 +48,42 @@ public class TestStock {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorSymbolNull() {
-		Stock s = Stock.createCommonStock(null, BigDecimal.valueOf(10), BigDecimal.valueOf(100));
+		Stock.createCommonStock(null, BigDecimal.valueOf(10), BigDecimal.valueOf(100));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorSymbolEmpty() {
-		Stock s = Stock.createCommonStock("", BigDecimal.valueOf(10), BigDecimal.valueOf(100));
+		Stock.createCommonStock("", BigDecimal.valueOf(10), BigDecimal.valueOf(100));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorDividendNull() {
-		Stock s = Stock.createCommonStock("TEST", null, BigDecimal.valueOf(100));
+		Stock.createCommonStock("TEST", null, BigDecimal.valueOf(100));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorDividendNegative() {
-		Stock s = Stock.createCommonStock("TEST", BigDecimal.valueOf(-2), BigDecimal.valueOf(100));
+		Stock.createCommonStock("TEST", BigDecimal.valueOf(-2), BigDecimal.valueOf(100));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorParValueNull() {
-		Stock s = Stock.createCommonStock("TEST", BigDecimal.valueOf(10), null);
+		Stock.createCommonStock("TEST", BigDecimal.valueOf(10), null);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorParValueZero() {
-		Stock s = Stock.createCommonStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(0));
+		Stock.createCommonStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(0));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorFixedNull() {
-		Stock s = Stock.createPreferredStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(100), null);
+		Stock.createPreferredStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(100), null);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testErrorFixedNegative() {
-		Stock s = Stock.createPreferredStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(100), BigDecimal.valueOf(-2));
+		Stock.createPreferredStock("TEST", BigDecimal.valueOf(10), BigDecimal.valueOf(100), BigDecimal.valueOf(-2));
 	}
 	
 	

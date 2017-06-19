@@ -9,8 +9,6 @@ import java.time.Instant;
 import org.junit.Test;
 
 import Models.Indicator;
-import Models.Stock;
-import Models.Trade;
 import Service.Market;
 import Service.SuperSimpleStockMarket;
 
